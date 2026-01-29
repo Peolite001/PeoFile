@@ -2,6 +2,7 @@
 import React from 'react'
 import Home from './home'
 import { auth } from '@/auth'
+import { redirect } from 'next/navigation'
 
 const page = async () => {
   const session = await auth()

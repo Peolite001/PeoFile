@@ -99,74 +99,7 @@ const PostActivity = ({session}) => {
           <h2 className='text-center text-gray-700 p-4 text-2xl font-semibold'>Your Activities</h2>
           <hr className='border-gray-200'/>
            <div className="w-full lg:w-180 mt-5 flex-1 lg:mx-auto">
-                     {/* loading when post is being fetched from database */}
-                     {
-                       loading ? <div className='h-64 flex items-center justify-center'>
-                               <TbLoader3 className='text-4xl text-orange-500 animate-spin' />
-                           </div> : 
-                           // post being loaded from database
-                           posts.map((post) => (
-                       <div
-                         key={post.id}
-                         className="bg-white border border-gray-200 rounded-xl shadow-sm mb-6 overflow-hidden">
-                         <div className="p-4 border-b border-gray-100">
-                           <div className="flex items-center gap-3">
-                           <img src={post.img}  className="h-8 w-8 lg:h-10 lg:w-10 rounded-full border-2 border-gray-200"/>
-                           <div>
-                             <p className="font-semibold text-gray-800 text-sm lg:text-base">{post.author.slice(0,11)}</p>
-                             <p className="text-xs lg:text-sm text-gray-600">{post.skills}</p>
-                             <p className="text-xs lg:text-sm text-gray-500">{post.timestamp}</p>
-                           </div>
-                           </div>
-                         </div>
-           
-                         {/* content of the post */}
-                         <div className="p-4">
-                           <div className="text-gray-700 text-sm lg:text-base">{post.post}</div>
-                         </div>
-                             
-                         {/* interactions with the post */}
-                         <div>
-                           <div className="px-4 py-2 border-t border-gray-100">
-                           <div className="flex justify-between text-xs lg:text-sm text-gray-500">
-                             <span>{likes[post.id] ? 1 : 0} likes</span>
-                             <span>0 comments</span>
-                             </div>
-           
-                             <div className="border-t border-gray-200 mx-4 mt-2"></div>
-                             <div className="flex items-center justify-between p-2 lg:p-3">
-                               <div className="flex gap-4 lg:gap-8">
-                                 {/* like button */}
-                                 <button
-                                   onClick={()=>handleLike(post.id)}
-                                   className="py-1 px-3 lg:px-5 rounded-lg hover:bg-gray-200 transition-colors flex gap-1 cursor-pointer text-xs lg:text-sm"
-                                 >
-                                   {likes[post.id] ? (
-                                     <span className="flex gap-1 text-orange-500" ><FaRegThumbsUp className="mt-0.5"/> Like </span>
-                                   ) : (
-                                     <span className="flex gap-1 font-medium text-gray-600" ><FaRegThumbsUp className="mt-0.5"/> Like </span>
-                                   )}
-                                 </button>
-                               </div>
-                                   {/* comment button */}
-                               <div className="py-1 px-3 lg:px-5 rounded-lg hover:bg-gray-200 transition-colors flex gap-1 cursor-pointer text-xs lg:text-sm">
-                                 <FaRegCommentDots className="mt-0.5 font-medium text-gray-600" />
-                                 <p>Comment</p>
-                               </div>
-                                  {/* delete button */}
-                               { post.author === session.user.name ? (
-                                 <button
-                                   className="py-1 px-3 lg:px-5 rounded-lg hover:bg-red-50 transition-colors cursor-pointer"
-                                   onClick={() => handleDelete(post.id)}
-                                 >
-                                   <FaRegTrashCan className="text-red-500"/>
-                                 </button>
-                               ) : null}
-                             </div>
-                           </div>
-                         </div>
-                       </div>
-                     ))}
+                    <div className="text-center p-10 text-gray-200">No Activity</div>
                    </div>
                    </div>
           </div>

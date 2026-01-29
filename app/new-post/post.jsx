@@ -9,7 +9,6 @@ import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import Link from 'next/link';
 import { ImSpinner3 } from "react-icons/im";
-import { BiPhotoAlbum } from "react-icons/bi";
 
 const style = {
   position: 'absolute',
@@ -80,15 +79,8 @@ const NewPostForm = ({session}) => {
              <Field as='textarea'placeholder="What do you want to talk about" name="post" className="outline-none border rounded-md border-gray-200 p-2"></Field>
              <ErrorMessage name='post'  component={'p'} className='text-xs text-red-500'/>
             </div>
-            <div className="flex items-center justify-center gap-8 lg:gap-50 border-t border-gray-100 pt-3">
-              <div className='border-2 border-dashed border-gray-300 rounded-lg p-4 text-center'>
-                          <label className="relative text-2xl lg:text-3xl text-gray-600 hover:text-orange-600 transition-colors cursor-pointer">
-                            <BiPhotoAlbum />
-                            <input type="file" name='file-upload' className="sr-only" accept="image/*,video/*" onChange={handleFileChange} />
-                          </label>
-                        </div>
-                        </div>
-             <button type='submit'  className='bg-orange-500 hover:bg-orange-600 text-white w-full 
+            
+             <button type='submit' className='bg-orange-500 hover:bg-orange-600 text-white w-full 
              rounded-md p-3 transition-all duration-200 font-medium flex items-center justify-center'>
                 {processing ? <ImSpinner3 className="animate-spin text-2xl"/> : 'Share Post'}
               </button>

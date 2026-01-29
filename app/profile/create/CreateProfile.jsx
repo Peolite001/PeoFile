@@ -3,6 +3,7 @@ import { db } from '@/app/config/firebaseConfig';
 import React, { useState } from 'react';
 import { doc, updateDoc } from "firebase/firestore";
 import { ImSpinner3 } from "react-icons/im";
+import { redirect } from 'next/navigation';
 
 
 const CreateProfile = ({session}) => {
@@ -31,6 +32,7 @@ const CreateProfile = ({session}) => {
             alert("Error updating profile. Please try again.");
         } finally{
       setProcessing(false)
+      redirect("/home")
     }
     }
 

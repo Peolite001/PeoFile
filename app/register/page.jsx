@@ -40,8 +40,8 @@ const handleSubmit = async (e) => {
               width={"800"}
               height={"800"}
               className="w-5 h-5"/>
-        <h1 className="text-lg text-gray-800 text-2xl font-bold bg-gradient-to-r
-         from-red-200 via-orange-600 to-green-500 bg-clip-text text-transparent">PeoFile</h1>
+        <h1 className="text-lg text-gray-800 c:\Users\HP\Documents\Blur\Blur - Shortcut.lnkfont-bold bg-gradient-to-r
+         from-red-200 via-orange-600 to-green-500 bg-clip-text">PeoFile</h1>
        </div>
          
          <div className="shadow-md p-3 rounded-md space-y-5 md:w-sm w-full">

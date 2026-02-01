@@ -121,8 +121,8 @@ const Navbar = () => {
                     <Link href={"#"}>
                 </Link>
                 <Link href={"/register"} className='flex gap-1 text-lg hover:text-green-500'>
-                <FaRegUser className='mt-1' />
-                <p className='max-md:hidden'>Sign up</p>
+                <FaRegUser className='mt-1 ml-30 md:ml-110 lg:ml-0' />
+                <p>Sign up</p>
                 </Link>
                 <Link href={"/auth/signin"}>
                 <p className="hover:text-green-500 text-lg max-lg:hidden">Log in</p>

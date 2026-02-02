@@ -8,13 +8,13 @@ import { cert } from "firebase-admin/app"
 export const { handlers, signIn, signOut, auth } = NextAuth({
   providers: [
      GoogleProvider({
-        clientId: process.env.AUTH_GOOGLE_ID,
-        clientSecret: process.env.AUTH_GOOGLE_SECRET
+        clientId: process.env.AUTH_GOOGLE_ID || "",
+        clientSecret: process.env.AUTH_GOOGLE_SECRET || ""
      }),
 
      GitHub({
-      clientId: process.env.AUTH_GITHUB_ID,
-        clientSecret: process.env.AUTH_GITHUB_SECRET
+      clientId: process.env.AUTH_GITHUB_ID || "",
+        clientSecret: process.env.AUTH_GITHUB_SECRET || ""
      }),
      Credentials({
   credentials: {
@@ -29,12 +29,17 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
       placeholder: "Enter your password",
     },
   },
+  async authorize(credentials) {
+    // Add your own credentials logic here
+    // Return null if the credentials are invalid
+    return null
+  }
 })
   ],
   adapter: FirestoreAdapter({
     credential: cert({
-      projectId: process.env.AUTH_FIREBASE_PROJECT_ID,
-      clientEmail: process.env.AUTH_FIREBASE_CLIENT_EMAIL,
+      projectId: process.env.AUTH_FIREBASE_PROJECT_ID || "",
+      clientEmail: process.env.AUTH_FIREBASE_CLIENT_EMAIL || "",
       privateKey: (process.env.AUTH_FIREBASE_PRIVATE_KEY || "").replace(/\\n/g, "\n"),
     }),
   }),

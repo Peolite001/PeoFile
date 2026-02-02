@@ -22,23 +22,22 @@ const Page = async () => {
         {/* Email/Password Form */}
         <form action={async (formData) => {
         "use server"
-        await signIn("credentials", formData)}} >
-          <div className="space-y-4">
+        await signIn("credentials", formData)}} className="space-y-4">
           <div>
-            <label htmlFor="Email" className="block text-sm font-medium text-gray-700 mb-2">
+            <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
               Email Address
             </label>
-            <input type="email" id="email" name="email"  placeholder='name@email.com' 
+            <input type="email" id="email" name="email" placeholder='name@email.com' 
               className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white text-gray-900
               focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all outline-none"
               required/>
           </div>
 
           <div>
-            <label htmlFor="Password" className="block text-sm font-medium text-gray-700 mb-2">
+            <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-2">
               Password
             </label>
-            <input  type="password" id="password" name="password" placeholder='Enter your password' 
+            <input type="password" id="password" name="password" placeholder='Enter your password' 
               className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white text-gray-900
               focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all outline-none"
               required/>
@@ -49,7 +48,6 @@ const Page = async () => {
              transition-colors focus:ring-2 focus:ring-orange-500 focus:ring-offset-2">
             Sign In
           </button>
-          </div>
         </form>
 
           <div className="flex justify-center text-sm">
@@ -63,8 +61,8 @@ const Page = async () => {
           <form action={async () => {
             "use server"
             await signIn("google") 
-          }}>
-            <button className='w-full flex items-center justify-center gap-3 py-3 px-4 border border-gray-300 
+          }} className="w-full">
+            <button type="submit" className='w-full flex items-center justify-center gap-3 py-3 px-4 border border-gray-300 
              rounded-lg hover:bg-gray-100 transition-colors focus:ring-2 focus:ring-gray-500 focus:ring-offset-2'>
               <FcGoogle className="text-xl" />
               <span className="text-sm font-medium text-gray-700">Continue with Google</span>
@@ -74,19 +72,24 @@ const Page = async () => {
           <form action={async () => {
             "use server"
             await signIn("github")
-          }}>
-            <button className='w-full flex items-center justify-center gap-3 py-3 px-4 border border-gray-300 
+          }} className="w-full">
+            <button type="submit" className='w-full flex items-center justify-center gap-3 py-3 px-4 border border-gray-300 
               rounded-lg hover:bg-gray-100 transition-colors focus:ring-2 focus:ring-gray-500 focus:ring-offset-2'>
               <FaGithub className="text-xl" />
               <span className="text-sm font-medium text-gray-700">Continue with GitHub</span>
             </button>
           </form>
 
-          <button className='w-full flex items-center justify-center gap-3 py-3 px-4 border border-gray-300 
-            rounded-lg hover:bg-gray-100 transition-colors focus:ring-2 focus:ring-gray-500 focus:ring-offset-2'>
-            <FaApple className="text-xl" />
-            <span className="text-sm font-medium text-gray-700">Continue with Apple</span>
-          </button>
+          <form action={async () => {
+            "use server"
+            await signIn("apple")
+          }} className="w-full">
+            <button type="submit" className='w-full flex items-center justify-center gap-3 py-3 px-4 border border-gray-300 
+              rounded-lg hover:bg-gray-100 transition-colors focus:ring-2 focus:ring-gray-500 focus:ring-offset-2'>
+              <FaApple className="text-xl" />
+              <span className="text-sm font-medium text-gray-700">Continue with Apple</span>
+            </button>
+          </form>
         </div>
 
       

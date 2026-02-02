@@ -44,7 +44,7 @@ const Navbar = () => {
                 height={"800"}
                 className="w-10 h-10"/>
                 <Link href={"/"}>
-                  <h1 className="text-2xl font-bold bg-gradient-to-r from-red-200 via-orange-600 
+                  <h1 className="text-2xl font-bold bg-linear-to-r from-red-200 via-orange-600 
                    to-green-500 bg-clip-text text-transparent text-center">PeoFile</h1>
                 </Link>
             </div>
@@ -69,7 +69,7 @@ const Navbar = () => {
       </div>
 
       {/* mobile and nav view */}
-      <div className={`lg:hidden bg-amber-100/100 h-dvh w-full absolute top-0 
+      <div className={`lg:hidden bg-amber-100 h-dvh w-full absolute top-0 
       left-0 flex flex-col items-center gap-10 pt-20 ${navOpen ? "opacity-100" :"opacity-0"}`}>
          {
           navItems.map((item, index)=>(

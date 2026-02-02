@@ -15,12 +15,13 @@ export default function Home() {
             connections and elevate your professional journey through shared expertise and inspiration.
           </p>
           </div>
-    <div className="md:w-60 p-2 gap-5 md:ml-35 lg:ml-130">
-          <span className=" flex items-center justify-center bg-orange-400 hover:bg-orange-700 text-amber-100 px-15 md:px-7
-           py-3 space-x-5 rounded-xl cursor-pointer">
-                 <Link href={"auth/signin"}><button className="text-xl cursor-pointer">PeoFile</button></Link>
+    <div className="lg:flex justify-center p-2 gap-5">
+      <Link href={"/auth/signin"}>
+          <span className="flex items-center justify-center bg-orange-400 hover:bg-orange-700 text-amber-100 px-6 md:px-7 py-3 space-x-5 rounded-xl cursor-pointer">
+                 <span className="text-xl cursor-pointer">PeoFile</span>
                  <FaArrowRight/>
             </span>
+            </Link>
         </div>
     </section>
      </div>

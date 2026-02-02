@@ -120,12 +120,12 @@ const Navbar = () => {
                 <div className="flex mt-2 md:gap-5">
                     <Link href={"#"}>
                 </Link>
-                <Link href={"/register"} className='flex gap-1 text-lg hover:text-green-500'>
+                <Link href={"/auth/signin"} className='flex gap-1 text-lg hover:text-green-500'>
                 <FaRegUser className='mt-1 ml-30 md:ml-110 lg:ml-0' />
-                <p>Sign up</p>
+                <p>Log in</p>
                 </Link>
-                <Link href={"/auth/signin"}>
-                <p className="hover:text-green-500 lg:text-lg text-sm ">Log in</p>
+                <Link href={"/register"}>
+                <p className="hover:text-green-500 lg:text-lg text-sm max-lg:hidden ">Sign up</p>
                 </Link>
                 </div>
                 </div>
